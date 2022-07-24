@@ -1,7 +1,7 @@
 import { Splide, SplideSlide } from '@splidejs/react-splide'
 import { partnersData } from '../../Data/partnersData'
 import '@splidejs/react-splide/css'
-import { Container } from '../../styles/Container'
+import { Container } from '../../styles/UI/Container'
 import styled from 'styled-components'
 
 const Partners = () => {
@@ -14,7 +14,7 @@ const Partners = () => {
             arrows: false,
             pagination: true,
             drag: 'free',
-            gap: '10em',
+            gap: '14em',
             wheel: true,
             direction: 'loop',
             speed: 2000,
@@ -24,8 +24,8 @@ const Partners = () => {
                 pagination: false,
                 direction: 'ttb',
                 perPage: 3,
-                gap: '5rem',
-                height: '15em',
+                gap: '6rem',
+                height: '11em',
               },
             },
           }}

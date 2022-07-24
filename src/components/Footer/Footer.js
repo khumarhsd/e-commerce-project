@@ -1,9 +1,12 @@
 import styled from 'styled-components'
 import FooterIconbar from './FooterIconbar'
-import { Container } from '../../styles/Container'
+import { Container } from '../../styles/UI/Container'
 import FooterLinks from './FooterLinks'
 
+
 const Footer = () => {
+
+
   return (
     <footer>
       <FooterContent>

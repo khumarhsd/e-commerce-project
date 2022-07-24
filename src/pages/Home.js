@@ -2,13 +2,25 @@ import Offers from '../components/Offers/Offers'
 import Partners from '../components/Partners/Partners'
 import ProductCards from '../components/ProductCards/ProductCards'
 import Showcase from '../components/Showcase/Showcase'
-import Advertisement from '../components/Advertisement/Advertisement'
+import ProductSection from '../components/ProductsSections/ProductSection'
+import { useSelector, useDispatch } from 'react-redux'
+import { fetchByCategory } from '../redux/actions/products'
+import { useEffect, useMemo } from 'react'
 
 const Home = () => {
+  const products = useSelector((state) => state.products)
+
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(fetchByCategory(''))
+  }, [dispatch])
+
+
   return (
     <div>
       <Showcase />
-      <Advertisement />
+      <ProductSection products={products} />
       <ProductCards />
       <Offers />
       <Partners />

@@ -37,5 +37,10 @@ export const colors = css`
 
   /* Element Colors  */
   --red: #db2c66;
-  --blue: #2d9cdb;
+  --blue-100: #2d9cdb;
+
+  --midnight: #232a31;
+  --green: #394c38;
+  --blue: #276787;
+  --pink: #faddd7;
 `

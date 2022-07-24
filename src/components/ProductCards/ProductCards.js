@@ -1,4 +1,4 @@
-import { Container } from '../../styles/Container'
+import { Container } from '../../styles/UI/Container'
 import styled from 'styled-components'
 import ProductCard from './ProductCard'
 import xiaomi from '../../assets/xiaomi.svg'
@@ -94,20 +94,20 @@ const Wrapper = styled.div`
 
     & > div:nth-child(1) {
       img {
-        width: 250px;
+        width: 50px;
       }
     }
 
     & > div:nth-child(2) {
       img {
-        width: 75px;
+        width: 50px;
 
         margin: 0;
       }
     }
     & > div:nth-child(3) {
       img {
-        width: 75px;
+        width: 50px;
         margin: 0;
 
       }

@@ -1,4 +1,4 @@
-import { Container } from '../../styles/Container'
+import { Container } from '../../styles/UI/Container'
 import styled from 'styled-components'
 import Offer from './Offer'
 import box from '../../assets/box.svg'

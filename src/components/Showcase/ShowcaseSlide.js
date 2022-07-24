@@ -76,8 +76,9 @@ const SlideImage = styled.div`
   }
 
   @media (min-width: 768px) {
-    img{
-        width: 470px;
+    img {
+      width: 470px;
+      padding: 0 1rem;
     }
   }
 `
@@ -87,8 +88,8 @@ const SlideText = styled.div`
     font-weight: var(--fw-bold);
   }
 
-  p{
-    margin-top: .75rem;
+  p {
+    margin-top: 0.75rem;
     max-width: 300px;
   }
 
@@ -96,11 +97,13 @@ const SlideText = styled.div`
     h2 {
       font-size: var(--fs-d-lg);
       font-weight: var(--fw-bold);
+      padding: 0 3rem;
     }
-    p{
-    margin-top: .75rem;
-    max-width: 450px;
-  }
+    p {
+      margin-top: 0.75rem;
+      max-width: 450px;
+      padding: 0 3rem;
+    }
   }
 `
 
