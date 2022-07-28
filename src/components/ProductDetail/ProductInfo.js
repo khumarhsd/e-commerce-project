@@ -5,7 +5,10 @@ import emptyStar from '../../assets/emptyStar.svg'
 import ColorContainer from './ColorContainer'
 import SizeContainer from './SizeContainer'
 import PriceContainer from './PriceContainer'
-import cart from '../../assets/cart.svg'
+import { useDispatch, useSelector } from 'react-redux'
+import { fetchCart, addToCart } from '../../redux/actions/cart'
+import { useEffect } from 'react'
+import cartSvg from '../../assets/cart.svg'
 
 const ProductInfo = ({
   product,
@@ -19,11 +22,14 @@ const ProductInfo = ({
   const variants = product?.variant_groups
   const colorVariant = product.variant_groups?.[0]
   const sizeVariant = product.variant_groups?.[1]
+  const dispatch = useDispatch()
+  // Product Price
   const price =
     product.price.raw +
     colorVariant?.options?.[activeColor]?.price.raw +
     sizeVariant?.options?.[activeSize]?.price.raw
 
+  // Product Name
   const productNameArr = []
   productNameArr.push(
     product.name,
@@ -34,6 +40,22 @@ const ProductInfo = ({
   const productName = !productNameArr.includes(undefined)
     ? productNameArr.join(', ')
     : productNameArr.join(' ')
+
+  // Add To Cart
+  const addToCartHandle = () => {
+    console.log('hey')
+    dispatch(
+      addToCart({
+        productId: product.id,
+        amount: amount,
+        colorGroupId: colorVariant?.id,
+        colorVariantId: colorVariant?.options[activeColor]?.id,
+        sizeGroupId: sizeVariant?.id,
+        sizeVariantId: sizeVariant?.options[activeSize]?.id,
+      })
+    )
+  }
+
   return (
     <div>
       <Wrapper>
@@ -59,12 +81,14 @@ const ProductInfo = ({
             {colorVariant && (
               <ColorContainer
                 colorVariant={colorVariant}
+                activeColor={activeColor}
                 setActiveColor={setActiveColor}
               />
             )}
             {sizeVariant && (
               <SizeContainer
                 sizeVariant={sizeVariant}
+                activeSize={activeSize}
                 setActiveSize={setActiveSize}
               />
             )}
@@ -88,9 +112,9 @@ const ProductInfo = ({
                 </button>
               </div>
               <div>
-                <button className='addToCart'>
+                <button className='addToCart' onClick={() => addToCartHandle()}>
                   {' '}
-                  <img src={cart} alt='' />
+                  <img src={cartSvg} alt='' />
                   Səbətə at
                 </button>
               </div>
@@ -117,7 +141,6 @@ const ProductInfoContent = styled.div`
   height: 100%;
   gap: 1rem;
   position: relative;
-
 `
 const ProductTitle = styled.h2`
   font-size: var(--fs-xl);
@@ -142,17 +165,12 @@ const Rating = styled.div`
     color: var(--blue-100);
     font-weight: var(--fw-medium);
   }
-
 `
 
 const ProductCount = styled.div`
-display: flex;
-justify-content: space-between;
-  button {
-    cursor: pointer;
-    outline: none;
-    border: 0;
-  }
+  display: flex;
+  justify-content: space-between;
+
   & > div:nth-of-type(1) {
     display: flex;
     align-items: center;
@@ -196,6 +214,7 @@ justify-content: space-between;
 
   .addToCart:hover {
     background-color: #2db563;
+    transition: all .3s;
   }
   @media (min-width: 768px) {
     flex-direction: column;

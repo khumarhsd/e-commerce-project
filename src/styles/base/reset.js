@@ -141,4 +141,9 @@ export const reset = css`
   ul {
     list-style: none;
   }
+  button{
+    outline: none;
+    border: none;
+    cursor: pointer;
+  }
 `

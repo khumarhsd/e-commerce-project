@@ -6,7 +6,7 @@ export const LoaderDotsStyled = styled.div`
         align-items: center;
         margin: 15% auto;
         svg {
-                width: 3.75em;
+                /* width: 3.75em; */
                 transform-origin: center;
                 animation: rotate 2s linear infinite;
         }
@@ -39,9 +39,9 @@ export const LoaderDotsStyled = styled.div`
         }
 `;
 
-export const Loader = () => (
+export const Loader = ({width}) => (
         <LoaderDotsStyled>
-                <svg viewBox="25 25 50 50">
+                <svg viewBox="25 25 50 50" width={width}> 
                         <circle cx="50" cy="50" r="20" />
                 </svg>
         </LoaderDotsStyled>

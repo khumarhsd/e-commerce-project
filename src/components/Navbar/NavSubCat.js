@@ -23,7 +23,7 @@ const NavSubCat = (props) => {
     <>
       {props.open && (
         <StyledSubCat
-          onMouseLeave={closeSubcategory}
+          onMouseLeave={() => closeSubcategory}
           className={props.open ? 'subCat-active' : ''}
         >
           <Container>

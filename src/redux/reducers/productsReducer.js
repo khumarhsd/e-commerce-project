@@ -1,5 +1,5 @@
 import {createSlice} from '@reduxjs/toolkit'
-import { fetchProducts } from '../actions/products'
+import { fetchByCategory } from '../actions/products'
 
 const initialState = {
     loading: false,
@@ -11,15 +11,15 @@ const productsReducer = createSlice({
     name: 'products',
     initialState,
     extraReducers:{
-        [fetchProducts.pending]: (state) =>{
+        [fetchByCategory.pending]: (state) =>{
             state.loading = true
         },
-        [fetchProducts.rejected]: (state, {payload}) =>{
+        [fetchByCategory.rejected]: (state, {payload}) =>{
             state.loading = false;
             state.error = payload.error
 
         },
-        [fetchProducts.fulfilled]: (state, {payload}) =>{
+        [fetchByCategory.fulfilled]: (state, {payload}) =>{
             state.loading = false
             state.products = payload
         },

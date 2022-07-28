@@ -1,10 +1,18 @@
 import styled from 'styled-components'
 import user from '../../assets/user.svg'
 import heart from '../../assets/heart.svg'
-import cart from '../../assets/cart.svg'
+import cartSvg from '../../assets/cart.svg'
 import { Link } from 'react-router-dom'
-
+import { fetchCart } from '../../redux/actions/cart'
+import { useDispatch, useSelector } from 'react-redux/es/exports'
+import { useEffect } from 'react'
+import { Loader } from '../../styles/UI/Spinner'
 const HeaderIcons = () => {
+  const dispatch = useDispatch()
+  useEffect(() => {
+    dispatch(fetchCart)
+  }, [dispatch])
+  const {cart} = useSelector((state) => state.cart)
   return (
     <Wrapper>
       <Link to={'/'}>
@@ -14,9 +22,10 @@ const HeaderIcons = () => {
         <img src={heart} alt='' />
       </Link>
       <Link to={'/cart'}>
-        <img src={cart} alt='' />
+        <img src={cartSvg} alt='' />
       </Link>
-      <span></span>
+        
+        <span>{cart ? cart.total_unique_items : 0}</span>
     </Wrapper>
   )
 }
@@ -33,6 +42,9 @@ const Wrapper = styled.div`
     border-radius: 100%;
     width: 15px;
     height: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-left: -1.5rem;
     margin-bottom: 1rem;
     background-color: var(--primary-100);

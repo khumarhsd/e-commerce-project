@@ -6,7 +6,6 @@ import Comment from './Comment'
 
 const Specs = ({ product }) => {
   const [activeTab, setActiveTab] = useState('specs')
-  console.log(product)
   return (
     <Wrapper>
       <Container>

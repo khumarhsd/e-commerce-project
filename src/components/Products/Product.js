@@ -6,7 +6,7 @@ const Product = (props) => {
   return (
     <>
       {props.loading ? (
-        <Loader />
+        <Loader width={60} />
       ) : (
         props.data.map((product) => (
           <ProductCard to={'/product/' + product.id} key={product.id}>

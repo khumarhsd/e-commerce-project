@@ -5,6 +5,7 @@ import ProductInfo from './ProductInfo'
 import { useState } from 'react'
 import Specs from './Specs'
 
+
 const DetailMain = ({ product }) => {
   const [activeSize, setActiveSize] = useState(0)
   const [activeColor, setActiveColor] = useState(0)
@@ -14,23 +15,24 @@ const DetailMain = ({ product }) => {
     activeColor
   ]?.assets.map((id) => product.assets.find((el) => el.id === id))
 
+  
   return (
     <>
       {!product ? (
-        <Loader />
+        <Loader width={50} />
       ) : (
         <>
           <Wrapper>
-          <Gallery assets={variantAssets ? variantAssets : product.assets} />
-          <ProductInfo
-            product={product}
-            amount={amount}
-            setAmount={setAmount}
-            activeSize={activeSize}
-            activeColor={activeColor}
-            setActiveSize={setActiveSize}
-            setActiveColor={setActiveColor}
-          />
+            <Gallery assets={variantAssets ? variantAssets : product.assets} />
+            <ProductInfo
+              product={product}
+              amount={amount}
+              setAmount={setAmount}
+              activeSize={activeSize}
+              activeColor={activeColor}
+              setActiveSize={setActiveSize}
+              setActiveColor={setActiveColor}
+            />
           </Wrapper>
           <Specs product={product} />
         </>

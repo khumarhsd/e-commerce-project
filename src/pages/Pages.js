@@ -6,7 +6,6 @@ import Products from './Products'
 
 const Pages = () => {
   
-  
   return (
     <div>
       <Routes>

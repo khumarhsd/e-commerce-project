@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-const ColorContainer = ({colorVariant, setActiveColor}) => {
+const ColorContainer = ({colorVariant, setActiveColor,activeColor}) => {
   return (
     <ColorWrapper>
               <ul>
@@ -43,6 +43,10 @@ width: 100%;
     padding: 6px;
   }
   li:focus {
+    border: 2px solid var(--primary-100);
+    padding: 4px;
+  }
+  .active{
     border: 2px solid var(--primary-100);
     padding: 4px;
   }

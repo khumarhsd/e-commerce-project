@@ -17,7 +17,7 @@ const Gallery = ({ assets }) => {
   return (
     <Wrapper>
       {!images ? (
-        <Loader />
+        <Loader width={50} />
       ) : (
         <ImageGallery
           items={images}

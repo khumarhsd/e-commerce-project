@@ -17,7 +17,6 @@ const ProductSection = ({products}) => {
   }
 
 
-
   return (
     <>
       <ProductsRow

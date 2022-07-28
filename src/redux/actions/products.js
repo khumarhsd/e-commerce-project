@@ -1,17 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import { commerce } from '../../lib/commerce'
 
-export const fetchProducts = createAsyncThunk(
-  'products/fetchProducts',
-  async () => {
-    try {
-      const res = await commerce.products.list()
-      return res.data
-    } catch {
-      console.error('Server error')
-    }
-  }
-)
 
 export const fetchByCategory = createAsyncThunk(
   'products/fetchProducts',
