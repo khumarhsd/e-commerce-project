@@ -13,6 +13,7 @@ export const fetchCart = createAsyncThunk('cart/fetchCart', async () => {
 export const addToCart = createAsyncThunk('cart/addToCart', async (data) => {
   try {
     const varObj = {}
+    
     varObj[data.sizeGroupId] = data.sizeVariantId
     varObj[data.colorGroupId] = data.colorVariantId
     if (Object.keys(varObj) == 'undefined') {

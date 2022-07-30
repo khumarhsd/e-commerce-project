@@ -43,6 +43,9 @@ const Wrapper = styled.div`
   flex-direction: column;
   gap: 1rem;
   width: 100%;
+  @media(min-width: 768px){
+    margin-top: 2.5rem;
+  }
 `
 
 const TotalContent = styled.div`

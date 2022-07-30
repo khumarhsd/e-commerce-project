@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { fetchByCategory } from '../redux/actions/products'
 
-const Cart = () => {
+const Test = ({category}) => {
   const products = useSelector((state) => state.products)
 
   const dispatch = useDispatch()
@@ -15,23 +15,18 @@ const Cart = () => {
   let prd = products.products.map((pr) => pr)
   const filtered = (name) => {
     const result = prd.filter((data) => {
-      return data.categories.some((c) => c.name === name)
+      return data.categories.some((c) => c.slug === name)
     })
-    // const result = products.products.map(product=> {
-    //   prd.categories.filter((data) => {
-    //     return data.name === category
-    //   })
-    // })
+
     setdata(result)
   }
   console.log(data)
-console.log(products.products);
   return (
     <div>
-      {<p onClick={() => filtered('Apple-T')}>Presss</p>}{' '}
+      {<p onClick={() => filtered(category)}>Presss</p>}{' '}
       <p>{data.map((el) => el.name)}</p>
     </div>
   )
 }
 
-export default Cart
+export default Test

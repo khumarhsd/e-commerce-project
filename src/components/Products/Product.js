@@ -1,14 +1,10 @@
 import styled from 'styled-components'
-import { Loader } from '../../styles/UI/Spinner'
 import { Link } from 'react-router-dom'
 
-const Product = (props) => {
+const Product = ({data}) => {
   return (
     <>
-      {props.loading ? (
-        <Loader width={60} />
-      ) : (
-        props.data.map((product) => (
+        {data.map((product) => (
           <ProductCard to={'/product/' + product.id} key={product.id}>
             <ImageContainer>
               {}
@@ -30,8 +26,7 @@ const Product = (props) => {
               </ProductPrice>
             </div>
           </ProductCard>
-        ))
-      )}
+        ))}
     </>
   )
 }

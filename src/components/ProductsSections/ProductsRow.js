@@ -3,22 +3,25 @@ import { Container } from '../../styles/UI/Container'
 import { Link } from 'react-router-dom'
 import chevron from '../../assets/chevron-right.svg'
 import Product from '../Products/Product'
+import {Loader} from '../../styles/UI/Spinner'
+
 
 const ProductsRow = ({ data, title, loading, slug }) => {
   return (
-    <>
       <ProductRowGrid>
         <CategoryTitle>{title}</CategoryTitle>
-        <LinkStyled to={`/products/${slug}`}>
+        <LinkStyled to={'/products/' + slug}>
           Hamısına bax <img src={chevron} alt='' />
         </LinkStyled>
         <ProductRowStyled>
           <Container>
-            <Product data={data} title={title} loading={loading} slug={slug} />
+            {loading ? (
+        <Loader width={60} /> ):
+        (<Product data={data}/>)
+      }
           </Container>
         </ProductRowStyled>
       </ProductRowGrid>
-    </>
   )
 }
 

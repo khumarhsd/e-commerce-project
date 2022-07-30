@@ -29,7 +29,7 @@ const NavList = ({ navOpen }) => {
     ul?.classList.remove('active')
   }
 
-  const categories = useSelector((state) => state.categories.categories.slice(3))
+  const categories = useSelector((state) => state.categories.categories)
   const dispatch = useDispatch()
 
   useEffect(() => {
@@ -52,7 +52,7 @@ const NavList = ({ navOpen }) => {
                 key={category.id}
                 onMouseEnter={() => openSubCategory(category)}
               >
-                <Link to={'/'}>{category.name}</Link>
+                <Link to={'/products/' + category.slug}>{category.name}</Link>
                 {category.children[0] && <img src={chevron} width={6} alt='' />}
               </li>
             ))}

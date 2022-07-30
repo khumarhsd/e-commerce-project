@@ -4,9 +4,7 @@ import { Container } from '../../styles/UI/Container'
 import { useSelector, useDispatch } from 'react-redux'
 import { fetchByCategory } from '../../redux/actions/products'
 import { useEffect, useMemo } from 'react'
-import Dropdown from './Dropdown'
-import { Overlay } from '../../styles/UI/Overlay'
-
+import { Link } from 'react-router-dom'
 const NavSubCat = (props) => {
   const closeSubcategory = function () {
     props.setOpen(false)
@@ -18,20 +16,18 @@ const NavSubCat = (props) => {
   useEffect(() => {
     dispatch(fetchByCategory(''))
   }, [dispatch])
-
   return (
     <>
       {props.open && (
         <StyledSubCat
-          onMouseLeave={() => closeSubcategory}
+          onMouseLeave={closeSubcategory}
           className={props.open ? 'subCat-active' : ''}
         >
           <Container>
             {props.items.subCat &&
               props.items.subCat.map((el) => (
                 <li key={el.id}>
-                  <a href='#'>{el.name}</a>
-                  <Dropdown category={props.items.subCat} products={products} />
+                  <Link to={'/products/' + el.slug}>{el.name}</Link>
                 </li>
               ))}
           </Container>
@@ -68,7 +64,7 @@ const StyledSubCat = styled.div`
   }
 
   @media (min-width: 1024px) {
-    height: 300px;
+    height: 15vh;
     margin-top: 2rem;
     box-shadow: 0px 300px 400px 0 rgba(0, 0, 0, 0.37);
 

@@ -17,7 +17,7 @@ const Cart = () => {
   return (
     <Wrapper>
       <Container>
-        {data.total_items == 0 ? (
+        {data.total_items === 0 ? (
           <EmptyCart />
         ) : (
           <CartList data={data} loading={cart.loading} />
@@ -32,18 +32,6 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  & > div {
-    /* background-color: #fff; */
-    /* height: 200px; */
-    /* margin: 0 1rem; */
-  }
 
-  @media (min-width: 768px) {
-    & > div {
-      /* background-color: #fff; */
-      /* height: 200px; */
-      /* margin: 0 3rem; */
-    }
-  }
 `
 export default Cart

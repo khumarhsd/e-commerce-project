@@ -2,7 +2,7 @@ import BreadCrumbs from '../styles/UI/BreadCrumbs'
 import { useParams } from 'react-router-dom'
 import { fetchByCategory } from '../redux/actions/products'
 import { useDispatch, useSelector } from 'react-redux'
-import { useMemo, useEffect } from 'react'
+import { useEffect } from 'react'
 import DetailMain from '../components/ProductDetail/DetailMain'
 
 const ProductDetail = () => {
@@ -12,7 +12,6 @@ const ProductDetail = () => {
   const product = products.products.filter((el) => {
     return el.id === params.name
   })
-
   useEffect(() => {
     dispatch(fetchByCategory(''))
   }, [dispatch])
@@ -20,7 +19,7 @@ const ProductDetail = () => {
 
   return (
     <>
-      <BreadCrumbs />
+      {/* <BreadCrumbs /> */}
       <DetailMain
         query={params}
         loading={products.loading}

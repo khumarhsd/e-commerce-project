@@ -3,9 +3,8 @@ import { IoTrashOutline } from 'react-icons/io5'
 import { useDispatch } from 'react-redux/es/exports'
 import { updateCart, removeFromCart } from '../../redux/actions/cart'
 import { Loader } from '../../styles/UI/Spinner'
-
+import { Link } from 'react-router-dom'
 const CartItem = ({ product, loading }) => {
-  // const [quantity, setquantity] = useState(product.quantity)
   const dispatch = useDispatch()
 
   const productId = product.id
@@ -19,13 +18,14 @@ const CartItem = ({ product, loading }) => {
     }
     dispatch(updateCart({ productId, quantity }))
   }
+  
   return (
-    <CartItemStyled key={product.id}>
+    <CartItemStyled key={productId}>
       <ImgStyled src={product.image.url} alt='' />
-      <h3>
+      <Link to={'/product/' + product.product_id}>
         {product.name} {product.selected_options?.[0]?.option_name}{' '}
         {product.selected_options?.[1]?.option_name}
-      </h3>
+      </Link>
       {product.selected_options?.[0] && (
         <ColorContainer>
           Rəng: {product.selected_options?.[0]?.option_name}
@@ -34,7 +34,7 @@ const CartItem = ({ product, loading }) => {
       <PriceContainer>
         {product.selected_options.length > 0 && (
           <span className='discount'>
-            {product.line_total.raw - 100 * product.quantity}₼
+            {product.line_total.raw + 100 * product.quantity}₼
           </span>
         )}
         <span className='price'>{product.line_total.raw}₼</span>
@@ -78,7 +78,7 @@ const CartItemStyled = styled.li`
   background-color: #fff;
   padding: 1rem;
 
-  h3 {
+  a {
     font-weight: var(--fw-medium);
     font-size: var(--fs-md);
     grid-column: 1/3;
@@ -89,7 +89,7 @@ const CartItemStyled = styled.li`
     grid-template-columns: repeat(5, minmax(auto, 1fr));
     padding: 0.25rem 1rem;
 
-    h3 {
+    a {
       grid-row: 1/2;
       grid-column: 2/4;
       margin-top: 0;

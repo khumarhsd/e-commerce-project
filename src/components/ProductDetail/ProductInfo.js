@@ -43,7 +43,6 @@ const ProductInfo = ({
 
   // Add To Cart
   const addToCartHandle = () => {
-    console.log('hey')
     dispatch(
       addToCart({
         productId: product.id,
