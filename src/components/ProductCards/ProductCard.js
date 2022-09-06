@@ -1,17 +1,11 @@
 import styled from 'styled-components'
-import { Link } from 'react-router-dom'
-
-import { BsChevronRight } from 'react-icons/bs'
 
 const ProductCard = ({ title, amount, link, image }) => {
   return (
     <ProductCardBg>
       <CardText>
         <ProductTitle>{title}</ProductTitle>
-        <p>{amount}</p>
-        <Link to={'/'}>
-          {link} <BsChevronRight />
-        </Link>
+   
       </CardText>
       <img src={image} alt='' />
     </ProductCardBg>

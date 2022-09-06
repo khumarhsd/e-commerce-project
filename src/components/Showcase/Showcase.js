@@ -65,7 +65,7 @@ z-index: -100;
     margin-top: 1rem;
     height: 700px;
     padding: 0;
-    border-top: 2px solid var(--primary-100);
+    /* border-top: 2px solid var(--primary-100); */
     background: url(${overlay}) center;
   }
 `

@@ -5,10 +5,11 @@ import emptyStar from '../../assets/emptyStar.svg'
 import ColorContainer from './ColorContainer'
 import SizeContainer from './SizeContainer'
 import PriceContainer from './PriceContainer'
-import { useDispatch, useSelector } from 'react-redux'
-import { fetchCart, addToCart } from '../../redux/actions/cart'
-import { useEffect } from 'react'
+import { useDispatch } from 'react-redux'
+import { addToCart } from '../../redux/actions/cart'
 import cartSvg from '../../assets/cart.svg'
+import Toastify from '../../components/Toastify/Toastify'
+import { toast } from 'react-toastify';
 
 const ProductInfo = ({
   product,
@@ -23,12 +24,12 @@ const ProductInfo = ({
   const colorVariant = product.variant_groups?.[0]
   const sizeVariant = product.variant_groups?.[1]
   const dispatch = useDispatch()
-  // Product Price
-  const price =
-    product.price.raw +
-    colorVariant?.options?.[activeColor]?.price.raw +
-    sizeVariant?.options?.[activeSize]?.price.raw
+  const notify = () => toast.success('Məhsul səbətə əlavə edildi');
 
+  // Product Price
+  const price =  product.price.raw +
+  colorVariant?.options?.[activeColor]?.price.raw +
+  sizeVariant?.options?.[activeSize]?.price.raw
   // Product Name
   const productNameArr = []
   productNameArr.push(
@@ -43,6 +44,7 @@ const ProductInfo = ({
 
   // Add To Cart
   const addToCartHandle = () => {
+    notify()
     dispatch(
       addToCart({
         productId: product.id,
@@ -121,6 +123,7 @@ const ProductInfo = ({
           </ProductInfoContent>
         </Container>
       </Wrapper>
+      <Toastify />
     </div>
   )
 }

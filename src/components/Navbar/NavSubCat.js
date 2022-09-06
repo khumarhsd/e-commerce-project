@@ -1,28 +1,23 @@
 import styled from 'styled-components'
-import { FiX } from 'react-icons/fi'
 import { Container } from '../../styles/UI/Container'
-import { useSelector, useDispatch } from 'react-redux'
-import { fetchByCategory } from '../../redux/actions/products'
-import { useEffect, useMemo } from 'react'
 import { Link } from 'react-router-dom'
+import {BsArrowLeft} from 'react-icons/bs'
+
 const NavSubCat = (props) => {
   const closeSubcategory = function () {
     props.setOpen(false)
   }
-  const products = useSelector((state) => state.products.products)
 
-  const dispatch = useDispatch()
-
-  useEffect(() => {
-    dispatch(fetchByCategory(''))
-  }, [dispatch])
   return (
     <>
       {props.open && (
         <StyledSubCat
-          onMouseLeave={closeSubcategory}
-          className={props.open ? 'subCat-active' : ''}
+        onMouseLeave={closeSubcategory}
+        className={props.open ? 'subCat-active' : ''}
         >
+          <span>
+        <BsArrowLeft onClick={() => closeSubcategory()} />
+          </span>
           <Container>
             {props.items.subCat &&
               props.items.subCat.map((el) => (
@@ -45,13 +40,17 @@ const StyledSubCat = styled.div`
   bottom: 0;
   background-color: #fff;
   z-index: 11;
-  font-size: var(--fs-xl);
   height: 100vh;
   transition: 0.3s all;
   .subCat-active {
     transform: translateX(0);
   }
-
+  span{
+    svg{
+      position: absolute;
+      right: 10%;
+    }
+  }
   li {
     display: flex;
     flex-direction: column;
@@ -61,17 +60,20 @@ const StyledSubCat = styled.div`
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    margin-top: 1rem;
   }
 
   @media (min-width: 1024px) {
-    height: 15vh;
-    margin-top: 2rem;
+    height: 10vh;
+    margin-top: 1.75rem;
     box-shadow: 0px 300px 400px 0 rgba(0, 0, 0, 0.37);
-
+    span{
+      display: none;
+    }
     & > div {
-      margin-top: 2rem;
+      margin-top: 1.5rem;
       flex-direction: row;
-      gap: 10rem;
+      gap: 5rem;
     }
 
     a {

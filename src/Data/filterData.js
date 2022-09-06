@@ -1,14 +1,12 @@
 export const filterData = [
-    {
-        title: 'Brend',
-        body: [
             {
-                title: 'Apple'
+                title: 'Apple',
+                
             },
             {
                 title: 'Samsung'
+            },
+            {
+                title: 'Xiaomi'
             }
-        ]
-    }
-
 ]

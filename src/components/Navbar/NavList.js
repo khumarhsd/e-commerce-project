@@ -29,7 +29,7 @@ const NavList = ({ navOpen }) => {
     ul?.classList.remove('active')
   }
 
-  const categories = useSelector((state) => state.categories.categories)
+  const categories = useSelector((state) => state.categories.categories.slice(0,-3))
   const dispatch = useDispatch()
 
   useEffect(() => {
@@ -96,13 +96,14 @@ const NavListStyled = styled.ul`
   }
 
   @media (min-width: 1024px) {
+    border-bottom: 2px solid var(--primary-100);
     position: static;
     font-size: var(--fs-md);
     background: 0;
     transform: translateX(0);
     padding: 0;
     height: fit-content;
-
+    padding-bottom: .25rem;
     & > div {
       flex-direction: row;
       gap: 3.5rem;
@@ -112,54 +113,6 @@ const NavListStyled = styled.ul`
       }
     }
   }
-
-  /* position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  gap: 2rem;
-  padding: 1rem 0;
-  background-color: #fff;
-  height: 100vh;
-  z-index: 5;
-  transition: 0.3s all;
-  transform: translateX(-100%);
-
-  a:hover{
-    color: var(--primary-100);
-  }
-
-  & > div {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-  }
-
-  li{
-    display: flex;
-    justify-content: space-between;
-  }
-
-  &.nav-active {
-  transform: translateX(0);
-
-  }
-  
-
-  @media (min-width: 768px) {
-    font-size: var(--fs-md);
-    background: 0;
-    transform: translateX(0);
-    padding: 0;
-
-    & > div {
-      flex-direction: row;
-      gap: 3.5rem;
-      img{
-        display: none;
-      }
-    }
-  } */
 `
 
 export default NavList

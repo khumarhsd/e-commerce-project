@@ -5,27 +5,38 @@ import cartSvg from '../../assets/cart.svg'
 import { Link } from 'react-router-dom'
 import { fetchCart } from '../../redux/actions/cart'
 import { useDispatch, useSelector } from 'react-redux/es/exports'
-import { useEffect } from 'react'
-import { Loader } from '../../styles/UI/Spinner'
+import { useEffect, useState } from 'react'
+import { commerce } from '../../lib/commerce'
+
 const HeaderIcons = () => {
+  const [auth, setAuth] = useState(commerce.customer.isLoggedIn())
+
   const dispatch = useDispatch()
   useEffect(() => {
-    dispatch(fetchCart)
+    dispatch(fetchCart())
   }, [dispatch])
-  const {cart} = useSelector((state) => state.cart)
+  const { cart } = useSelector((state) => state.cart)
   return (
     <Wrapper>
-      <Link to={'/'}>
-        <img src={user} alt='' />
-      </Link>
+      {auth ? (
+        <Link to={'/profile'}>
+          <img src={user} alt='' />
+          
+        </Link>
+      ) : (
+        <Link to={'/login'}>
+          <img src={user} alt='' />
+        </Link>
+      )}
+
       <Link to={'/'}>
         <img src={heart} alt='' />
       </Link>
       <Link to={'/cart'}>
         <img src={cartSvg} alt='' />
       </Link>
-        
-        <span>{cart ? cart.total_unique_items : 0}</span>
+
+      <span>{cart.total_unique_items}</span>
     </Wrapper>
   )
 }

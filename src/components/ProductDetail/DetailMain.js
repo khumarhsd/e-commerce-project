@@ -4,6 +4,7 @@ import { Loader } from '../../styles/UI/Spinner'
 import ProductInfo from './ProductInfo'
 import { useState } from 'react'
 import Specs from './Specs'
+import Breadcrumbs from '../Breadcrumbs/Breadcrumbs'
 
 const DetailMain = ({ product }) => {
   const [activeSize, setActiveSize] = useState(0)
@@ -13,13 +14,14 @@ const DetailMain = ({ product }) => {
   const variantAssets = product?.variant_groups?.[0]?.options?.[
     activeColor
   ]?.assets.map((id) => product.assets.find((el) => el.id === id))
-
+  
   return (
     <>
       {!product ? (
         <Loader width={50} />
       ) : (
         <>
+        <Breadcrumbs product={product} category={product?.categories?.[1]?.name} />
           <Wrapper>
             <Gallery assets={variantAssets ? variantAssets : product.assets} />
             <ProductInfo

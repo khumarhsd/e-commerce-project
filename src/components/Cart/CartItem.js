@@ -2,9 +2,8 @@ import styled from 'styled-components'
 import { IoTrashOutline } from 'react-icons/io5'
 import { useDispatch } from 'react-redux/es/exports'
 import { updateCart, removeFromCart } from '../../redux/actions/cart'
-import { Loader } from '../../styles/UI/Spinner'
 import { Link } from 'react-router-dom'
-const CartItem = ({ product, loading }) => {
+const CartItem = ({ product }) => {
   const dispatch = useDispatch()
 
   const productId = product.id
@@ -18,7 +17,7 @@ const CartItem = ({ product, loading }) => {
     }
     dispatch(updateCart({ productId, quantity }))
   }
-  
+
   return (
     <CartItemStyled key={productId}>
       <ImgStyled src={product.image.url} alt='' />
@@ -34,10 +33,10 @@ const CartItem = ({ product, loading }) => {
       <PriceContainer>
         {product.selected_options.length > 0 && (
           <span className='discount'>
-            {product.line_total.raw + 100 * product.quantity}₼
+            {product.line_total.raw + 100 * product.quantity} ₼
           </span>
         )}
-        <span className='price'>{product.line_total.raw}₼</span>
+        <span className='price'>{product.line_total.raw} ₼</span>
       </PriceContainer>
       <ProductCount>
         <button
@@ -49,7 +48,7 @@ const CartItem = ({ product, loading }) => {
         >
           -
         </button>
-        {loading ? <Loader width={30} /> : <p>{product.quantity}</p>}
+        <p>{product.quantity}</p>
         <button
           onClick={(e) => {
             updateHandler('inc')
@@ -60,11 +59,7 @@ const CartItem = ({ product, loading }) => {
         </button>
       </ProductCount>
       <TrashContainer>
-        {loading ? (
-          <Loader width={30} />
-        ) : (
-          <IoTrashOutline onClick={() => dispatch(removeFromCart(productId))} />
-        )}
+        <IoTrashOutline onClick={() => dispatch(removeFromCart(productId))} />
       </TrashContainer>
     </CartItemStyled>
   )

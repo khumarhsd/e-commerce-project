@@ -43,4 +43,5 @@ export const colors = css`
   --green: #394c38;
   --blue: #276787;
   --pink: #faddd7;
+  --purple: #b7afe6;
 `

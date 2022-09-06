@@ -1,4 +1,3 @@
-import BreadCrumbs from '../styles/UI/BreadCrumbs'
 import { useParams } from 'react-router-dom'
 import { fetchByCategory } from '../redux/actions/products'
 import { useDispatch, useSelector } from 'react-redux'
@@ -19,7 +18,6 @@ const ProductDetail = () => {
 
   return (
     <>
-      {/* <BreadCrumbs /> */}
       <DetailMain
         query={params}
         loading={products.loading}

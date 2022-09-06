@@ -3,7 +3,6 @@ import { Container } from '../styles/UI/Container'
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react'
 import { fetchCart } from '../redux/actions/cart'
-// import { Loader } from '../styles/UI/Spinner'
 import CartList from '../components/Cart/CartList'
 import EmptyCart from '../components/Cart/EmptyCart'
 const Cart = () => {
@@ -17,7 +16,7 @@ const Cart = () => {
   return (
     <Wrapper>
       <Container>
-        {data.total_items === 0 ? (
+        {data?.total_items == 0 ? (
           <EmptyCart />
         ) : (
           <CartList data={data} loading={cart.loading} />

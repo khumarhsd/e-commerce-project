@@ -13,7 +13,7 @@ export const fetchCart = createAsyncThunk('cart/fetchCart', async () => {
 export const addToCart = createAsyncThunk('cart/addToCart', async (data) => {
   try {
     const varObj = {}
-    
+
     varObj[data.sizeGroupId] = data.sizeVariantId
     varObj[data.colorGroupId] = data.colorVariantId
     if (Object.keys(varObj) == 'undefined') {
@@ -48,25 +48,20 @@ export const updateCart = createAsyncThunk(
 export const removeFromCart = createAsyncThunk(
   'cart/removeFrom',
   async (productId) => {
-      try {
-          const response = await commerce.cart.remove(productId);
-          return response.cart;
-      }
-      catch {
-        console.error('Server error')
-      }
+    try {
+      const response = await commerce.cart.remove(productId)
+      return response.cart
+    } catch {
+      console.error('Server error')
+    }
   }
 )
 
-export const emptyCart = createAsyncThunk(
-  'cart/emptyCart',
-  async () => {
-      try {
-          const response = await commerce.cart.empty();
-          return response.cart;
-      }
-      catch {
-        console.error('Server error')
-      }
+export const emptyCart = createAsyncThunk('cart/emptyCart', async () => {
+  try {
+    const response = await commerce.cart.empty()
+    return response.cart
+  } catch {
+    console.error('Server error')
   }
-)
+})
