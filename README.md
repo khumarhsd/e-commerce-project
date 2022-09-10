@@ -49,7 +49,7 @@
 
 <!-- ! past project url here -->
 
-[![Product Name Screen Shot][product-screenshot]](https://tello-e-commerce-app.netlify.app/)
+[![Product Name Screen Shot][product-screenshot][product-screenshot-1]](https://tello-e-commerce-app.netlify.app/)
 
 #### [View the demo](https://tello-e-commerce-app.netlify.app/#/)
 
