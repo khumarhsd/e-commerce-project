@@ -5,8 +5,9 @@
 <br />
 <div align="center">
   <a href="https://tello-e-commerce-app.netlify.app/">
-    <img src="src/assets/logo.svg"  alt="Tello" width="80" height="80">
+    <img src="src/assets/logo.svg"  alt="Tello" width="100" height="100">
   </a>
+  <hr/>
 
 <h3 align="center">Tello</h3>
 
@@ -35,14 +36,8 @@
       </ul>
     </li>
     <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
     </li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
+    <li><a href="#contributing">Contributing</a></li>\
     <li><a href="#contact">Contact</a></li>
 
   </ol>
@@ -54,7 +49,7 @@
 
 <!-- ! past project url here -->
 
-[![Product Name Screen Shot][product-screenshot]](https://tello-e-commerce-app.netlify.app/)
+[![Product Name Screen Shot][product-screenshot] [product-screenshot-1]](https://tello-e-commerce-app.netlify.app/)
 
 #### [View the demo](https://tello-e-commerce-app.netlify.app/#/)
 
@@ -129,4 +124,5 @@ Project Link: [https://github.com/khumarhsd/e-commerce-project](https://github.c
 [stars-url]: https://github.com/khumarhsd/e-commerce-project/stargazers
 [issues-shield]: https://img.shields.io/github/issues/khumarhsd/e-commerce-project.svg?style=for-the-badge
 [issues-url]: https://github.com/khumarhsd/e-commerce-project/issues
-[product-screenshot]: public/project-mockup.png , public/project-mockup-1.png
+[product-screenshot]: public/project-mockup.png , 
+[product-screenshot-1]: public/project-mockup-1.png
