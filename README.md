@@ -5,7 +5,7 @@
 <br />
 <div align="center">
   <a href="https://tello-e-commerce-app.netlify.app/">
-    <h1  alt="./src/assets/logo.svg" width="80" height="80"></h1>
+    <h1  alt="src/assets/logo.svg" width="80" height="80"></h1>
   </a>
 
 <h3 align="center">Tello</h3>
@@ -68,18 +68,9 @@ Hi there! Tello E-commerce App is a final project of front-end section in TechAc
 - [CRA](https://create-react-app.dev/)
 - [React-Router](https://reactrouter.com/docs/en/v6/getting-started/overview)
 - [Styled-Components](https://styled-components.com/)
-- [Styled-System](https://styled-system.com/)
-- [Axios](https://axios-http.com/docs/intro)
-- [React-Select](https://react-select.com/home)
-- [Framer-Motion](https://www.framer.com/motion/)
-- [React-Helmet](hhttps://www.npmjs.com/package/react-helmet)
 - [React-Toastify](https://www.npmjs.com/package/react-toastify)
-- [React-Switch](https://www.npmjs.com/package/react-uuid)
-- [Loadable Components](https://loadable-components.com/docs/getting-started/)
-- [StyleLint](https://stylelint.io/user-guide/get-started/)
-- [ESLint](https://eslint.org/)
-- [Standard Version](https://github.com/conventional-changelog/standard-version)
-- [Conventional Commits](https://www.conventionalcommits.org/)
+- [React-Redux](https://react-redux.js.org/introduction/getting-started)
+- [React-Paginate](https://www.npmjs.com/package/react-paginate)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -87,92 +78,20 @@ Hi there! Tello E-commerce App is a final project of front-end section in TechAc
 
 ## Roadmap
 
-- [x] Create CLOSED GitHub project for this test task.
-- [x] The result should be a link to the working application and your GitHub project.
-- [x] Open your GitHub project for our mentors:
-      https://github.com/wallwhite
-      https://github.com/lequanvn89
-      https://github.com/Shramkoweb
-- [x] Add commits using conventional commits specification.
-- [x] Light/Dark theme switcher.
-- [x] Create SPA.
-
-  - [x] Use React.
-  - [x] Use React-Hooks.
-  - [x] Use React-Context Api.
-  - [x] Desktop Version.
-  - [x] Code spliting with Loadable Components.
-  - [ ] Tabled Version.
-  - [ ] Mobile Version.
-  - [ ] Typescrip.
-  - [ ] SSR/SSG.
-
-- [x] The back button works like in the browser (go back to the prev application state)
-- [x] Nice Readme for humans :)
-- [x] Add transition animation with framer-motion.
-- [x] Create Design System with styled-components & styled-theme.
-- [x] Create Http-service with all Axios requests in one file.
-- [x] All functionality from Figma-mockup works:
-
-  - [x] Add image to favourites.
-  - [x] Delete image from favourites.
-  - [ ] Delete likes & dislike.
-  - [x] Search works on all pages.
-  - [x] Show new user logs at the top.
-  - [x] Upload image from file.
-  - [x] Upload image from drag-and-drop.
-  - [x] Gallery Page
-  - [x] Error & load handle with toastify.
+- First, you need create **Home page** for this project. 
+- The result should be a link to the working application and your GitHub project.
+- Make sure:
+      The page must be fully responsive for mobile devices
+      Use one of the **css** *libraries* or *framework*
+- Before fetching all products for your app, you need create them.
+      Create 15-20 products and provide all needed specific data for them. 
+- Fetch all products and place them in ***Home page***
+  
 
 See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-<!-- GETTING STARTED -->
-
-## Getting Started
-
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
-
-### Prerequisites
-
-This is an example of how to list things you need to use the software and how to install them.
-
-- npm
-
-  ```sh
-  npm install npm@latest -g
-  ```
-
-### Installation Localy
-
-1. Get a free API Key at [Thecatapi.com](https://thecatapi.com/)
-2. Clone the repo
-
-   ```sh
-   git clone https://github.com/AlexKasatov/pets-paw.git
-   ```
-
-3. Install NPM packages
-
-   ```sh
-   npm install
-   ```
-
-4. Enter your API in `.env` file
-
-   ```env
-   REACT_APP_API_KEY = "ENTER YOUR API";
-   ```
-
-5. Run Project
-
-   ```sh
-   npm run start
-   ```
-
-<p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- CONTRIBUTING -->
 
@@ -195,23 +114,19 @@ Don't forget to give the project a star! Thanks again!
 
 ## Contact
 
-Alex Kasatov - alexmorton_dev@protonmail.com - alexkasatovdesign@gmail.com
+Khumar Huseynzada  - khumarhsd@gmail.com 
 
-Project Link: [https://github.com/AlexKasatov/pets-paw](https://github.com/AlexKasatov/pets-paw)
+Project Link: [https://github.com/khumarhsd/e-commerce-project](https://github.com/khumarhsd/e-commerce-project)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
-[contributors-shield]: https://img.shields.io/github/contributors/AlexKasatov/pets-paw.svg?style=for-the-badge
-[contributors-url]: https://github.com/AlexKasatov/pets-paw/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/AlexKasatov/pets-paw.svg?style=for-the-badge
-[forks-url]: https://github.com/AlexKasatov/pets-paw/network/members
-[stars-shield]: https://img.shields.io/github/stars/AlexKasatov/pets-paw.svg?style=for-the-badge
-[stars-url]: https://github.com/AlexKasatov/pets-paw/stargazers
-[issues-shield]: https://img.shields.io/github/issues/AlexKasatov/pets-paw.svg?style=for-the-badge
-[issues-url]: https://github.com/AlexKasatov/pets-paw/issues
-[license-shield]: https://img.shields.io/github/license/AlexKasatov/pets-paw.svg?style=for-the-badge
-[license-url]: https://github.com/AlexKasatov/pets-paw/blob/master/LICENSE.txt
-[product-screenshot]: public/img/project-mockup.png
+[contributors-shield]: https://img.shields.io/github/contributors/khumarhsd/e-commerce-project.svg?style=for-the-badge
+[contributors-url]: https://github.com/khumarhsd/e-commerce-project/graphs/contributors
+[forks-url]: https://github.com/khumarhsd/e-commerce-project/network/members
+[stars-url]: https://github.com/khumarhsd/e-commerce-project/stargazers
+[issues-shield]: https://img.shields.io/github/issues/khumarhsd/e-commerce-project.svg?style=for-the-badge
+[issues-url]: https://github.com/khumarhsd/e-commerce-project/issues
+[product-screenshot]: public/project-mockup.png
