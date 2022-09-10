@@ -7,7 +7,6 @@
   <a href="https://tello-e-commerce-app.netlify.app/">
     <img src="src/assets/logo.svg"  alt="Tello" width="100" height="100">
   </a>
-  <hr style="height:1px"/>
 
 <h3 align="center">Tello</h3>
 
@@ -35,7 +34,7 @@
         <li><a href="#built-with">Built With</a></li>
       </ul>
     </li>
-    <li><a href="#contributing">Contributing</a></li>\
+    <li><a href="#contributing">Contributing</a></li>
     <li><a href="#contact">Contact</a></li>
 
   </ol>
