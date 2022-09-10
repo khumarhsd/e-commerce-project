@@ -5,7 +5,7 @@
 <br />
 <div align="center">
   <a href="https://tello-e-commerce-app.netlify.app/">
-    <h1  alt="src/assets/logo.svg" width="80" height="80"></h1>
+    <img src="src/assets/logo.svg"  alt="Tello" width="80" height="80">
   </a>
 
 <h3 align="center">Tello</h3>
@@ -129,4 +129,4 @@ Project Link: [https://github.com/khumarhsd/e-commerce-project](https://github.c
 [stars-url]: https://github.com/khumarhsd/e-commerce-project/stargazers
 [issues-shield]: https://img.shields.io/github/issues/khumarhsd/e-commerce-project.svg?style=for-the-badge
 [issues-url]: https://github.com/khumarhsd/e-commerce-project/issues
-[product-screenshot]: public/project-mockup.png
+[product-screenshot]: public/project-mockup.png , public/project-mockup-1.png
