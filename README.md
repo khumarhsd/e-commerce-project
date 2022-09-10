@@ -49,7 +49,7 @@
 
 <!-- ! past project url here -->
 
-[![Product Name Screen Shot][product-screenshot] [product-screenshot-1]](https://tello-e-commerce-app.netlify.app/)
+[![Product Name Screen Shot][product-screenshot]](https://tello-e-commerce-app.netlify.app/)
 
 #### [View the demo](https://tello-e-commerce-app.netlify.app/#/)
 
@@ -124,5 +124,5 @@ Project Link: [https://github.com/khumarhsd/e-commerce-project](https://github.c
 [stars-url]: https://github.com/khumarhsd/e-commerce-project/stargazers
 [issues-shield]: https://img.shields.io/github/issues/khumarhsd/e-commerce-project.svg?style=for-the-badge
 [issues-url]: https://github.com/khumarhsd/e-commerce-project/issues
-[product-screenshot]: public/project-mockup.png , 
+[product-screenshot]: public/project-mockup.png
 [product-screenshot-1]: public/project-mockup-1.png
