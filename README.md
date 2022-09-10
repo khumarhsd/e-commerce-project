@@ -7,7 +7,7 @@
   <a href="https://tello-e-commerce-app.netlify.app/">
     <img src="src/assets/logo.svg"  alt="Tello" width="100" height="100">
   </a>
-  <hr/>
+  <hr width="1" />
 
 <h3 align="center">Tello</h3>
 
@@ -49,7 +49,7 @@
 
 <!-- ! past project url here -->
 
-[![Product Name Screen Shot][product-screenshot][product-screenshot-1]](https://tello-e-commerce-app.netlify.app/)
+[![Product Name Screen Shot][product-screenshot][product-screenshot-1]] [![Product Name Screen Shot][product-screenshot-1]](https://tello-e-commerce-app.netlify.app/)
 
 #### [View the demo](https://tello-e-commerce-app.netlify.app/#/)
 
