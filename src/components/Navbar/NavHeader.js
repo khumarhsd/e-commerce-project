@@ -18,7 +18,7 @@ const NavHeader = ({ navOpen, setNavOpen }) => {
       <Link to={'/'}>
         <img src={logo} className='logo' alt='' />
       </Link>
-      <SearchBar />
+      {/* <SearchBar /> */}
       <HeaderIcons />
     </HeaderWrapper>
   )

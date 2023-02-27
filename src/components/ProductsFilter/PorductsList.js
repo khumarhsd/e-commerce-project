@@ -50,7 +50,7 @@ const ListWrapper = styled.div`
   }
 
   @media (min-width: 1024px) {
-    grid-template-columns: repeat(auto-fill, 300px);
+    grid-template-columns: repeat(3, 1fr);
     justify-content: space-between;
   }
   img {

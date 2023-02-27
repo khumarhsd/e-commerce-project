@@ -36,7 +36,7 @@ const HeaderIcons = () => {
         <img src={cartSvg} alt='' />
       </Link>
 
-      <span>{cart.total_unique_items}</span>
+      <span>{cart?.total_unique_items}</span>
     </Wrapper>
   )
 }

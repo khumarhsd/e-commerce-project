@@ -65,6 +65,7 @@ const ProductCard = styled(Link)`
 const ImageContainer = styled.div`
   text-align: center;
   margin-bottom: 24px;
+  align-self: center;
   img {
     max-height: 175px;
   }
@@ -79,6 +80,7 @@ const ImageContainer = styled.div`
 const ProductPrice = styled.div`
   .discount {
     color: var(--gray-50);
+    font-size: var(--fs-sm);
     text-decoration: line-through;
   }
   .priceVar {
